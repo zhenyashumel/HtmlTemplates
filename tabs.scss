@@ -1,0 +1,67 @@
+$TABS_BASE_P: 0rem;
+$TABS_BASE_BG: gray;
+
+$TABS_HEADER_BG: lightgray;
+
+$TABS_CONTENT_P:1rem;
+$TABS_CONTENT_BG: white;
+
+$TABS_HEADER_ITEM_COLOR:white;
+$TABS_HEADER_ITEM_P:.5rem .1rem;
+
+$TABS_ACTIVE_HEADER_ITEM_BG: white;
+$TABS_ACTIVE_HEADER_ITEM_COLOR: black;
+
+
+
+
+$HEADER_ITEM_P:.5rem .1rem;
+
+.tabs{
+  &_base{
+    padding:$TABS_BASE_P;
+    background-color: $TABS_BASE_BG;
+  }
+
+  &__header{
+    &_base{
+      display:flex;
+      flex-wrap:wrap;
+      background-color: $TABS_HEADER_BG;
+    }
+  }
+  &__content{
+    &_base{
+      background-color: $TABS_CONTENT_BG;
+      padding:$TABS_CONTENT_P;
+    }
+  }
+
+  &__header-item{
+    &_base{
+      padding: $TABS_HEADER_ITEM_P;
+      cursor:pointer;
+      color:$TABS_HEADER_ITEM_COLOR;
+
+    }
+    &_active{
+      color: $TABS_ACTIVE_HEADER_ITEM_COLOR;
+      background-color: $TABS_ACTIVE_HEADER_ITEM_BG;
+    }
+  }
+  &__content-item{
+    &_base{
+      display:none;
+    }
+    &_active{
+      display: block;
+      animation:fadeOut .6s;
+    }
+  }
+}
+
+@keyframes fadeOut {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+
+}
